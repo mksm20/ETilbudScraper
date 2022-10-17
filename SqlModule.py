@@ -6,9 +6,5 @@ class Sql_Connect:
         crsr = connection.cursor()
         return (crsr, connection)
         
-
-class Sql_Disconnect:
-    def __init__(self, connection):
-        self.connection = connection
-    def close(self):
-        self.connection.close()
+class Sql_Request:
+    None
