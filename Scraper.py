@@ -42,6 +42,7 @@ class Main_Module:
                     a.Name = name
                     a.Store = store
                     price = re.sub(" kr.", "", price)
+                    price = re.sub("\.", "", price)
                     price = re.sub(",", ".", price)
                     a.Price = price
                     a.Extra = extra
