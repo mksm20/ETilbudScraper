@@ -1,4 +1,9 @@
 from DbFill import DbFiller
+import django
 
-CreateDatabase = DbFiller
-CreateDatabase.dbFill(CreateDatabase)
+
+def fillDB():
+    CreateDatabase = DbFiller
+    CreateDatabase.dbFill(CreateDatabase)
+
+fillDB()

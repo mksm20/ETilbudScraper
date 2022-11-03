@@ -1,9 +1,8 @@
-from ctypes import sizeof
 import selenium
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
-import obj
+from obj import grocery
 import re
 
 
@@ -38,14 +37,10 @@ class Main_Module:
                         By.XPATH, 
                         f"""/html/body/div[1]/div/div[2]/div[2]/div[2]/ul
                         /li[{idx}]/a/div/div[3]/div[1]""").text
-                    a = obj.grocery()
-                    a.Name = name
-                    a.Store = store
                     price = re.sub(" kr.", "", price)
                     price = re.sub("\.", "", price)
                     price = re.sub(",", ".", price)
-                    a.Price = price
-                    a.Extra = extra
+                    a = grocery(name, store, extra, price)
                     idx = idx + 1
                     groceryList.append(a)
                 except:
